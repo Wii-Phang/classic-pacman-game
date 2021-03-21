@@ -1,0 +1,387 @@
+
+
+/*******************
+  Custom properties
+*********************/
+
+:root {
+  --ff-primary: "Lato", sans-serif;
+  --ff-secondary: "Lato", monospace;
+
+  --fw-reg: 400;
+  --fw-bold: 900;
+
+  --clr-light: #f3f3f3;
+  --clr-dark: #000205;
+  --clr-accent: #30a6f4;
+  --clr-dark-secondary: #041825;
+  --clr-accent-secondary: #2a6d96;
+
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-p: 1rem;
+
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+
+  --bs-second: 1.25em 1.25em 3.125em rgba (0, 0, 0, 0.5);
+
+  --ts: 1px 0px 1px rgb(24, 24, 24), 0px 1px 1px rgb(19, 19, 19),
+    2px 1px 1px rgb(24, 24, 24);
+}
+
+@media (min-width: 800px) {
+  :root {
+    --fs-h1: 5rem;
+    --fs-h2: 3.75rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
+  }
+}
+
+/*****************
+  General style
+******************/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: url(/img/pacman-2.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+
+section {
+  padding: 5em 2em;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+strong {
+  font-weight: var(--fw-bold);
+}
+
+:focus {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 3px;
+}
+
+/* ==========
+    Button
+============= */
+
+.btn {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 0.5em;
+    padding: 1.2em 3em;
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--clr-light);
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    background-image: linear-gradient(
+      -90deg,
+      #f4d137,
+      #f49d37,
+      #fb4d3d,
+      #b80f00,
+      #3f88c5,
+      #34a0e3
+    );
+    background-size: 500%;
+    background-position: 0 50%;
+    transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  .btn:hover {
+    background-position: 100% 50%;
+  }
+  
+  .back-button-container {
+    position: absolute;
+    top: 0.2em;
+    left: 0.625em;
+    padding: 0.625em;
+  }
+  
+  .bk-link {
+    text-decoration: none;
+  }
+  
+  .bk-btn {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: var(--fw-bold);
+    padding: 0.625em;
+    position: relative;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  .bk-btn:hover {
+    animation: animate 1s linear infinite;
+    color: rgb(51, 46, 46);
+    background: #ffffff;
+  }
+  
+  .bk-btn span {
+    display: block;
+    position: absolute;
+    background: rgb(14, 134, 247);
+  }
+  
+  .bk-btn span:nth-child(1) {
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+  }
+  
+  .bk-btn:hover span:nth-child(1) {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transform: transform 0.5s;
+  }
+  
+  .bk-btn span:nth-child(2) {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+  }
+  
+  .bk-btn:hover span:nth-child(2) {
+    transform: scaleX(1);
+    transform-origin: left;
+    transform: transform 0.5s;
+  }
+  
+  .bk-btn span:nth-child(3) {
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+  }
+  
+  .bk-btn:hover span:nth-child(3) {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transform: transform 0.5s;
+  }
+  
+  .bk-btn span:nth-child(4) {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+  }
+  
+  .bk-btn:hover span:nth-child(4) {
+    transform: scaleX(1);
+    transform-origin: left;
+    transform: transform 0.5s;
+  }
+  
+  @keyframes animate {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(0);
+    }
+    75% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+
+  .fas {
+    margin-right: 0.2em;
+  }
+
+  
+/* ============
+    Typography
+   ============ */
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .scoreBoard {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.3em auto 1em;
+    border: 3px solid rgba(241, 241, 241, .8);
+    border-radius: 10px;
+    padding: 0.3em 1.2em;
+    border-radius: 15px;
+    background: linear-gradient(100deg, #000205, #086a91, #0dccda);
+    color: var(--clr-light);
+  }
+
+  /****************
+     Container
+****************/
+
+.title__content {
+    background: -webkit-linear-gradient(100deg, #d5f3f5, #0dccda, #086a91);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: var(--fw-bold);
+    
+  }
+  
+  .title::after {
+    content: "";
+    display: block;
+    width: 8em;
+    height: 0.2em;
+    background: linear-gradient(100deg, #086a91, #0dccda, #d5f3f5);
+    opacity: 1;
+    margin: -1em auto 0.625em;
+    border: 1em;
+  }
+  
+
+  /******************
+      Pac-Man Grid
+  *******************/
+  .grid {
+    z-index: -2;
+    display: flex;
+    flex-wrap: wrap;
+    width: 420px;
+    height: 420px;
+    margin: 0 auto 1em;
+    background: #1a1a1b;
+    border: 5px solid rgba(241, 241, 241, 0.5);
+    border-radius: 10px;
+
+}
+  
+  .grid div {
+    width: 15px;
+    height: 15px;
+  }
+  
+  .pac-dot {
+    background-color: #f7f0f0;
+    border: 5px solid #1a1a1b;
+    box-sizing: border-box;
+}
+
+.wall {
+    background-color: rgba(25, 11, 146, 0.8);
+}
+
+.power-pellet {
+    background-color: #f1fdb9;
+    border-radius: 7px;
+
+}
+
+.pac-man-right {
+    background: url('img/pacman.png');
+    background-size: cover;
+    border: none;
+}
+
+.pac-man-left {
+    background-image: url('img/pacman.png'); 
+    background-size: cover;
+    border: none;
+    transform: scaleX(-1);
+}
+  
+.pac-man-up {
+    background-image: url('img/pacman.png');  
+    background-size: cover;
+    border: none;
+    transform: rotate(270deg);
+}
+  
+.pac-man-down {
+    background-image: url('img/pacman.png');  
+    background-size: cover;
+    border: none;
+    transform: rotate(90deg);
+}
+  
+
+.blinky {
+    background: url('img/blinky.png');
+    background-size: cover;
+    border: none;
+
+}
+
+.pinky {
+    background: url('img/pinky.png');
+    background-size: cover;
+    border: none;
+
+
+}
+
+.inky {
+    background: url('img/inky.png');
+    background-size: cover;
+    border: none;
+
+
+}
+
+.clyde {
+    background: url('img/clyde.png');
+    background-size: cover;
+    border: none;
+
+
+}
+
+.scared-ghost {
+    background: url('img/scared-ghost.png');
+    background-size: cover;
+    border: none;
+}
